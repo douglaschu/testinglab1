@@ -20,8 +20,10 @@ class ChangeHandler {
       this.cashTendered += 5;
     } else if (type === "dime") {
       this.cashTendered += 10;
-    } else {
+    } else if (type === "quarter") {
       this.cashTendered += 25;
+    } else {
+      return false;
     }
   }
 
@@ -65,5 +67,10 @@ class ChangeHandler {
     };
   }
 }
+
+//test to see if giveChange() has any errors, also to look at giveChange's output
+// let cash = new ChangeHandler(68);
+// cash.cashTendered = 100;
+// console.log(cash.giveChange());
 
 module.exports = { ChangeHandler };
